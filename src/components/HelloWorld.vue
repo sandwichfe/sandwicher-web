@@ -1,32 +1,34 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <el-tabs v-model="activeName">
+      <el-tab-pane label="tab1" name="first" :key="'first'">
+        <div style="background: yellow; display: inline">
+          tab1内容 tab1内容 tab1内容
+        </div>
+      </el-tab-pane>
+
+      <el-tab-pane label="tab2" name="second" :key="'second'">
+        <div style="background: green; display: inline">
+          tab2内容 tab2内容 tab2内容
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+    <!-- 注释　　　　　　　label：选项卡显示的title　　　　　　　name：与选项卡绑定的activeName对应的标识符，表示选项卡的别名　　　　　-->
   </div>
 </template>
-
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
-  }
-}
+  },
+  data() {
+    return {
+      //默认第一个选项卡
+      activeName: "first",
+    };
+  },
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
